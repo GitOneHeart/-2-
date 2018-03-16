@@ -1,0 +1,205 @@
+.howPlay {width: 2.8rem;height: 0.9rem;background: url(../img3/info.png) no-repeat;background-size: 100% 100%;position: fixed;right: 0 ;top: 0.3rem;color: #ffffff;text-align: center;line-height: .9rem;font-size: 0.4rem;z-index: 30;}
+/*上拉菜单*/
+.header{
+	width: 100%;
+	height: 70px;
+	background: url(../img3/caidan.png) no-repeat;
+	background-size: 100% 100%;
+	position: fixed;
+	bottom: 0;
+}
+.header .nav{
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 111;
+	bottom: 0;
+}
+.header .nav li{
+	float: left;
+	width: 33%;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	border-right: 1px solid #2d066c;
+}
+.header .nav li:last-child {border: none;}
+.header .nav li a{
+	color: #fff;
+	display: inline-block;
+	font-size: 27px;
+}
+.header .nav li .second-nav{
+	width: 33%;
+	display: none;
+	position: absolute;
+	bottom: 70px;
+	z-index: 33;
+}
+.header .nav li .second-nav li{
+	position: relative;
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	font-size: 20px;
+	background: #2d066c;
+	border-top: 1px solid #097d1f;
+	z-index: 51;
+}
+/*Tab栏的*/
+#container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 31;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 0.5rem;
+  /*padding: 0.6rem 0.6rem;*/
+}
+.closeTab {
+  position: fixed;
+  right: 35px ;
+  top: 40px;
+}
+#container ul {
+  height: 1rem;
+  color: #ffffff;
+  padding: 0 15px;
+}
+.tab-item {
+  /*transform: translate(0,-100%);*/
+  list-style: none;
+  width: 26%;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  color: #ffffff;
+  float: left;
+  font-size: 0.46666667rem;
+  /*transition: transform 1s;*/
+}
+.tab-item.active {
+  height: 75px;
+  background: url(../img3/scrollbar.png) no-repeat;
+  color: #ffffff;
+  z-index: 30;
+  background-position: 5px 53px;
+  /*background-attachment: fixed;*/  
+}
+.products .main {
+  color: white;
+  display: none;
+  padding: 20px 0.266666rem 0;
+}
+.products .selected {
+  display: block;
+  height: 13rem;
+  overflow: auto;
+}
+.products .ruleTop {
+  font-size: .4rem;
+  color: #000000;
+  width: 200px;
+  padding: 10px 0;
+  background: #FFFFFF;
+  font-family: '微软雅黑';
+  text-align: center;
+}
+.main .ruleCon {
+  color: #FFFFFF;
+  font-size: 0.4rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 40px;
+}
+.main p {
+  color: #FFFFFF;
+  font-size: 0.4rem;
+  margin-top: 0.13333333rem;
+  line-height: 40px;
+}
+.top_1 {margin-top: 20px;}
+.main .rankingMain {
+  width: 100%;
+  color: #FFFFFF;
+  font-size: 0.4rem;
+  float: left;
+  padding: 20px 0;
+  border-bottom: 2px dashed #8C8C8B;
+}
+.main .rankingMain .prizeImg {
+  margin-right: 10px;
+  vertical-align: top;
+}
+.main .rankingMain .rankingImg {
+  width: 1.06666667rem;
+  height: 1.06666667rem;
+  border-radius: 50%;
+  float: left;
+}
+.main .rankingMain .prizeLi {
+  display: block;
+  float: left;
+  height: 100%;
+  color: #FFFFFF;
+}
+.main .rankingMain .prizeLi .span_c {
+  color: yellow;
+}
+.rankingXu {
+  color: #FFFFFF;
+  text-shadow: 1px 1px 3px #f1ff00;
+  float: left;
+  margin-right: 0.4rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+.rankingImg {
+  margin-right: 0.53333333rem;
+}
+.rankingLi {
+  color: #FFFFFF;
+  width: 6.66666667rem;
+  float: left;
+  line-height: 2;
+}
+.span_d,
+.rankingName {
+  color: yellow;
+}
+.rankingName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  width: 1.73333333rem;
+  float: left;
+}
+/*分享给好友*/
+.shareJian {
+  position: fixed;
+  right: 5%;
+  top: 2%;
+}
+.shareConfirm {
+  position: fixed;
+  right: 36%;
+  top: 40%;
+}
+/*关注二维码*/
+.attention {width: 70%;margin: 0 auto;border-radius: 30px;position: relative;}
+.closeBtn {position: absolute;top: -20%;right: 0%;width: 0.613333rem;height: 0.626666rem;}
+.closeBtn img {width: 100%;height: 100%;}
+.attention_main {padding:0.186666rem 1.92rem;background: #f3e704;border-radius: 20px 20px 0 0;}
+.attention_main a {display: inline-block;}
+.attention_bottom {color: #000000;font-size: 33px;padding: 0.15rem 0.48rem;background: #FFFFFF;border-radius: 0 0 20px 20px;}
+/*温馨提示*/
+.alert_main>p:first-child{margin-bottom: 0.706666rem;}
+.alert_main {padding: 0.466666rem 0.4rem 0.7rem;}
+.alert_main .alert_title {font-size: 35px;font-weight: 600;color: #EF591F;}
+.alert_des {font-size: 32px;}
+.confirm {border: none;padding: 0.173333rem 0.533333rem;background: #f3e704;border-radius: 40px;letter-spacing: 10px;}

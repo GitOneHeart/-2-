@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>青城宝藏</title>
+		<meta content="width=750" name="viewport" />
+		<script src="./js/mobile-util.js"></script>
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<meta content="chrome=1" http-equiv="X-UA-Compatible" />
+		<meta content="true" name="HandheldFriendly" />
+		<meta content="no-cache" http-equiv="pragma" />
+		<meta content="no-cache" http-equiv="cache-control" />
+		<meta content="0" http-equiv="expires" />   
+	    <!-- 全屏模式 -->
+		<meta content="true" name="x5-fullscreen" />
+		<!-- 强制竖屏 -->
+		<meta content="portrait" name="x5-orientation" />
+		<meta content="yes" name="full-screen" />
+		<!-- 强制竖屏 -->
+		<meta content="portrait" name="screen-orientation" />
+		<link href="./css/reset.css" rel="stylesheet" type="text/css" />
+		<link href="./css/animate.css" rel="stylesheet" type="text/css" />
+		<link href="./css/liMarquee.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<link rel="stylesheet" href="css/card.css" />
+		<!--<link rel="stylesheet" href="http://10086.sj168.com:8083/activitys/broad_band/css/weui.css">-->
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+		<script src="js/main_3.js"></script>
+		<script src="./js/jquery.liMarquee.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/card.js"></script>
+		<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+		<style type="text/css">
+		/*html,body{max-width: 750px;margin: 0 auto;background: #4d0882;background-size: 100% 100%;height: 100%;}*/
+		html,body{max-width: 750px;margin: 0 auto;background: url(img3/index.jpg) no-repeat;background-size: 100% 100%;height: 100%;}
+		/*header部分的层叠样式表*/
+		header{padding-top: 12%;}
+		.top_title {text-align: center;}
+		.top_title a {display: inline-block;}
+		.top_title a img {width: 100%;}
+		.top_title2 {text-align: center;position: relative;top: -20px;left: 0;}
+		.top_title2  a {display: inline-block;}
+		.top_title2 a img {width: 100%;}
+		.outlunbo {width: 58%;padding:0.2rem 0.533rem;overflow: hidden;border-radius: 5px;margin:0 auto 0;background: #7f0fce;background-size: auto;}
+		#marqueeleft {width:100%;height:100%;line-height:1;overflow:hidden; color:#fff;font-size: 24px;background:transparent;}
+		#marqueeleft a{margin: 0 0.2rem; color: #fff; text-decoration: none;display: inline-block;}
+		/*header部分的层叠样式表结束*/
+		main{position: relative;}
+		/*中间转盘样式*/
+		main section{width:6.933333rem;margin: 0px auto 0 auto;}
+		main section>div.turn{height: 7.32rem;width:6.933333rem;background: url(img3/big.png) no-repeat center center;background-size: 100% 100%;text-align: center;position: relative;}
+		main section>div.turn::before{content: "";display: inline-block;vertical-align: middle;height: 100%;}
+		main section span{display: inline-block;width: 5.54rem;height: 5.62rem;text-align: center;vertical-align: middle;}
+		main section span img{vertical-align: middle;position: relative;top: -0.1rem;left: 0rem;width: 100%;}
+		section span a {display: inline-block;}
+		#img2 {width:126px;height:154px;left: 0px;z-index: 22;top: -306px;}
+		.white {position: absolute;top: 8%;left: 2%;transform: rotate(9deg);-webkit-transform: translate(9deg)}
+		.yellow {position: absolute;top: 9%;left: 2%;transform: rotate(-9deg);-webkit-transform: translate(-9deg)}
+		.innner1 {width: 90%;}
+		.innner2 {width: 87.5%;}
+		/*中间转盘样式结束*/
+		/*转盘周围装饰品样式*/
+		section p{text-align: center;line-height:60px;font-size: 26px;color:#fff;margin-top: 20px;}
+		.myprize{position: absolute;right: 50px;top: 530px;font-size: 20px;line-height: 36px;color: #fff;text-align: center;z-index:100;}
+		/*转盘周围装饰品用样式结束*/
+		.loading{position: fixed;left: 0;right: 0;top: 0;bottom: 0;z-index: 100;background: rgba(0,0,0,0.3);text-align: center;display: none;}
+		.loading::before{content: "";display: inline-block;vertical-align: middle;width: 0;height: 100%;}
+		.loading img{vertical-align: middle;}
+		.follow{position: fixed;left: 0;top: 0;bottom: 0;right: 0;z-index: 1000;background: rgba(0,0,0,0.6);text-align: center;display: none;}
+		.follow::before{content: "";display: inline-block;width: 0;height: 100%;vertical-align: middle;}
+		.follow img{vertical-align: middle;}
+		.gong_1{position: fixed;left: 0;top: 0;right: 0;bottom:0;z-index: 50;background: rgba(0,0,0,0.8);text-align: center;display: none;padding-top: 50%;height: 100%;}
+		.card {padding-top: 20%;}
+		.gong_1 span{display:inline-block;width: 532px;height: 840px;background: url(img3/alert.png) no-repeat; background-size: 100% 100%;position: relative;text-align: center;padding-top:76px ;} 
+		.card_title {font-size: 0.5rem;}
+		.gong_1 span img {position: absolute;top: 24%;left: 24%;width: 3.413333rem;height: 3.413333rem;border-radius: 50%;border: 4px solid #FFFFFF;}
+		.introduce {position: absolute;top: 53%;left: 0%;font-size: 28px;font-weight:600;text-align: left;padding: 0 30px;height: 4.306666rem;overflow: auto;}
+		.card_btn {position: absolute;bottom: 2%;left:35%;background: #FFFFFF;border-radius: 20px;padding: 10px 45px;}
+		.card_btn a {display: inline-block;color: #000000;font-size:30px;}
+		.weui_mask {
+			background: rgba(0,0,0,0.8) !important;
+			z-index: 31;
+		}
+		</style>
+	</head>
+	<body class="clearfix">
+		<header class="clearfix">
+			<div class="top_title">
+				<a href="javascript:;">
+					<img src="img3/title.png"/>
+				</a>
+			</div>
+			<div class="top_title2">
+				<a href="javascript:;">
+					<img src="img3/top.png"/>
+				</a>
+			</div>
+		</header>
+		<div class="outlunbo">
+			<div id="marqueeleft">
+				<a href="javascript:;">恭喜134***0040暂列排行榜第一</a>
+				<a href="javascript:;">恭喜134***0040暂列排行榜第一</a>
+				<a href="javascript:;">恭喜134***0040暂列排行榜第一</a>
+				<a href="javascript:;">恭喜134***0040暂列排行榜第一</a>
+				<a href="javascript:;">恭喜134***0040暂列排行榜第一</a>	
+			</div>
+		</div>
+		<!-- 转盘 -->
+		<main class="clearfix">
+			<section>
+				<div class="turn">
+					<span>
+						<a href="javascript:;" class="white infinite animated fadeIn"><img class="innner1" src="img3/white.png"/></a>
+						<a href="javascript:;" class="yellow infinite animated fadeOut"><img class="innner2" src="img3/yellow.png"/></a>
+						<a href="javascript:;" class="turn1"><img id="outter" src="img3/turn.png" /></a>
+						<a href="javascript:;" class="btn"><img id="img2" src="img3/btn.png" /></a>
+					</span>
+				</div>
+				<div class="howPlay">
+	    			玩法介绍&nbsp;》
+	    		</div>
+			</section>
+		</main>
+	<!-- 绑定和中奖提示弹框 -->
+	<div class="gong_1 card" style="display: none;">
+		<span style="z-index: 32;">
+			<p class="card_title"></p>
+			<img class="card_img" alt="卡片" src="img3/card1.png" />
+			<p class="introduce">
+				时代：<em class="contry"></em><br/>
+				尺寸：<em class="size"></em><br/>
+				来源：<em class="from"></span>
+			</p>
+			<div class="card_btn"><a href="javascript:;">确&nbsp;定</a></div>
+		</span>
+	</div>
+	<!--关注二维码-->
+	<div class="gong_1 ercode" id="ercode" style="display: none;">
+		<div class="attention">
+			<div class="closeBtn">
+				<img src="img3/XXX_03.png"/>
+			</div>
+			<div class="attention_main">
+				<a href="javascript:;">
+					<img src="img3/ercode.png"/>
+				</a>
+			</div>
+			<div class="attention_bottom">
+				长按识别二维码关注微厅才可参与活动呦
+			</div>
+		</div>
+	</div>
+	<!--温馨提示-->
+	<div class="gong_1 alert" id="alert" style="display: none;">
+		<div class="attention">
+			<div class="attention_main alert_main">
+				<p class="alert_title">温&nbsp;馨&nbsp;提&nbsp;示</p>
+				<p class="alert_des used_des">啊是巨大空间打开的距离卡级的烧录卡大家</p>
+			</div>
+			<div class="attention_bottom">
+				<button class="confirm">确定</button>
+			</div>
+		</div>
+	</div>
+	<!--分享-->
+	<div class="gong_1 share" style="display: none;">
+		<div class="shareJian"><img src="img3/share.png"/></div>
+		<div class="shareConfirm"><img src="img3/yes.png"/></div>
+	</div>
+	<!--机会已用完-->
+	<!--上拉菜单-->
+	<div class="header">
+			<ul class="nav">
+				<li><a href="#">宽带专区</a>
+					<ul class="second-nav">
+						<li><a href="#">宽带1</a></li>
+						<li><a href="#">宽带2</a></li>
+						<li><a href="#">宽带3</a></li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#">最新活动</a>
+					<ul class="second-nav">
+						<li><a href="#">活动1</a></li>
+						<li><a href="#">活动2</a></li>
+					</ul>
+				</li>
+				<li><a href="#">我要精彩</a>
+					<ul class="second-nav">
+						<li><a href="#">精彩1</a></li>
+					</ul>
+				</li>
+			</ul>
+	</div>
+	<!--Tab活动规则-->
+		<div id="container" class="weui_mask" style="display: none;">
+		<div class="closeTab"><img src="img3/close.png"/></div>
+        <ul>
+            <li class="tab-item active">活动规则</li>
+            <li class="tab-item">我的卡片</li>
+            <li class="tab-item">排行榜</li>
+        </ul>
+        <hr />
+        <div class="products">
+        	<div class="main selected">
+            	<div class="ruleTop top_1">活动时间</div>
+            	<p class="ruleCon">
+					2018年4月1日-4月30日
+            	</p>
+            	<div class="ruleTop">活动奖品</div>
+            	<p class="ruleCon">
+            		<a href="javascript:;">
+            			<img src="img3/rule.png"/>
+            		</a>
+            	</p>
+            	<div class="ruleTop">活动说明</div>
+            	<p class="ruleCon">
+            		1、参与活动的用户，进入页面后，通过转动大转盘进行文物卡片的收集；<br/>
+            		2、用户每天有一次收集机会，分享给好友每天可以再旋转一次；<br/>
+            		3、通过给用户收集的文物卡片的种类进行流量发放；<br/>
+            		4、参与用户只能是呼和浩特移动号码，并关注绑定【呼和浩特移动微厅】公众号，才可以进行参与。<br/>
+            	</p>
+            </div>
+            <div class="main">
+            	<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide swiper_page1">
+						<p class="page_title">匈奴金王冠</p>
+						<a href="javascript:;" class="page_img">
+							<img src="img3/card1.png">
+						</a>
+						<p class="total">五张</p>
+					</div>
+					<div class="swiper-slide swiper_page2">
+						<p class="page_title">匈奴金王冠</p>
+						<a href="javascript:;" class="page_img">
+							<img src="img3/card1.png">
+						</a>
+						<p class="total">五张</p>
+					</div>
+					<div class="swiper-slide swiper_page3">
+						<p class="page_title">匈奴金王冠</p>
+						<a href="javascript:;" class="page_img">
+							<img src="img3/card1.png">
+						</a>
+						<p class="total">五张</p>
+					</div>
+					<div class="swiper-slide swiper_page4">
+						<p class="page_title">匈奴金王冠</p>
+						<a href="javascript:;" class="page_img">
+							<img src="img3/card1.png">
+						</a>
+						<p class="total">五张</p>
+					</div>
+					<div class="swiper-slide swiper_page5">
+						<p class="page_title">匈奴金王冠</p>
+						<a href="javascript:;" class="page_img">
+							<img src="img3/card1.png">
+						</a>
+						<p class="total">五张</p>
+					</div>
+					<div class="swiper-slide swiper_page6">
+						<p class="page_title">匈奴金王冠</p>
+						<a href="javascript:;" class="page_img">
+							<img src="img3/card1.png">
+						</a>
+						<p class="total">五张</p>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="main">
+            	<div class="rankingMain">
+            		<div class="rankingXu">01</div>
+            		<img class="rankingImg" src="img3/shu5.png" alt="头像"  >
+            		<div class="rankingLi"><span class="rankingName">阿尔巴基斯坦</span>集齐六种<span class="span_d">(共35种卡片)</span></div>
+            	</div>
+            	<div class="rankingMain">
+            		<div class="rankingXu">01</div>
+            		<img class="rankingImg" src="img3/shu5.png" alt="头像"  >
+            		<div class="rankingLi"><span class="rankingName">阿尔巴基斯坦</span>集齐六种<span class="span_d">(共35种卡片)</span></div>
+            	</div>
+            	<div class="rankingMain">
+            		<div class="rankingXu">01</div>
+            		<img class="rankingImg" src="img3/shu5.png" alt="头像"  >
+            		<div class="rankingLi"><span class="rankingName">阿尔巴基斯坦</span>集齐六种<span class="span_d">(共35种卡片)</span></div>
+            	</div>
+            	<div class="rankingMain">
+            		<div class="rankingXu">01</div>
+            		<img class="rankingImg" src="img3/shu5.png" alt="头像"  >
+            		<div class="rankingLi"><span class="rankingName">阿尔巴基斯坦</span>集齐六种<span class="span_d">(共35种卡片)</span></div>
+            	</div>
+            	<div class="rankingMain">
+            		<div class="rankingXu">01</div>
+            		<img class="rankingImg" src="img3/shu5.png" alt="头像"  >
+            		<div class="rankingLi"><span class="rankingName">阿尔巴基斯坦</span>集齐六种<span class="span_d">(共35种卡片)</span></div>
+            	</div>
+            </div>	
+            </div>
+            </div>
+        </div>
+	</body>
+	<!-- 绑定和中奖提示弹框结束 -->
+	<script>
+	/*弹窗*/
+//	model('iiiiiiiiiii','您的机会已用完呦')
+	function model(f1,f2) {
+		$('.alert_des').html(f1);
+		$('.used_des').html(f2);
+		var $id = $('#alert');
+		$id.show();
+		$id.find('.confirm').on('click',function() {
+			$('.alert').hide();
+		})
+	}
+	var times = 1;
+	var subscribe = null;
+	var awardFlag = null;
+	var opentrue = true;//控制点击的开关
+	// 得到转盘的元素，进行绑定点击事件
+	outter = document.getElementById('outter');
+	$("#img2").on("click", myFun = function() {
+		// 关注
+		if (subscribe == 0) {
+			$('#ercode').fadeIn('fast');
+			close();
+			return;
+		}else if (times > 0) {//次数大于零
+			       awardFlag = Math.round(Math.random()*9+1); // 几等奖0代表没有中奖
+			       awardFlag=5;
+					//if (running) return; 
+					if (running) return; 
+					times--;
+					rotate();
+					$('section>p').html("您本周还有"+times+"次抽奖机会");
+					$('.card_btn').on('click',function(){
+						$('.card').hide();
+					})
+					$('.gong_1').on('click',function(event){
+						event.stopPropagation();
+						$('.gong_1').hide();
+					});
+		} else {
+			model();
+		}
+	});
+	/*关闭弹窗*/
+	function close (){
+		$('.closeBtn').on('click',function(){
+			$('.gong_1').hide();
+		})
+	}
+	// 向左滚动初始化
+	$('#marqueeleft').liMarquee({
+		direction: 'left',
+		hoverstop: false,
+		scrollamount: 50,
+		runshort: false
+	});	
+	/*分享好友按钮确定*/
+	$('.shareConfirm').on('click',function(event){
+		event.stopPropagation();
+		$('.share').hide();
+	})
+	$('.gong_1 span').on('click',function(event){
+		event.stopPropagation();
+		return false;
+	});
+	/*上拉菜单*/
+	$(function(){
+		var _this1=null;
+		$('.nav>li').hover(function(){
+			_this1=$(this);
+			_this1.find('.second-nav').stop(true).slideDown();
+		},function(){
+			_this1.find('.second-nav').stop(true).slideUp();
+		});
+	});
+	/*Tab活动规则*/
+	$(".howPlay").on('click',function(){
+		$('.show_bg').hide();
+		$('#container').slideDown(500);
+		$('.closeTab').on('click',function(){
+			$('#container').slideUp(500);
+		})
+	})
+	$('.tab-item').mouseover(function(){ 
+		$(this).addClass('active').siblings().removeClass('active')
+		$('.main').eq($(this).index()).addClass('selected').siblings().removeClass('selected');
+	})
+	/*卡片收集*/
+	 var mySwiper = new Swiper('.swiper-container',{
+ 	  autoplay:true,
+	  slidesPerView : 'auto',
+	  centeredSlides : true,
+	  watchSlidesProgress: true,
+	  paginationClickable: true,
+	  observer:true,
+	  observeParents:true,
+	  onProgress: function(swiper) {
+        for (var i = 0; i < swiper.slides.length; i++){
+	        var slide = swiper.slides[i];
+	        var progress = slide.progress;
+			scale = 1 - Math.min(Math.abs(progress * 0.2), 1);
+	        es = slide.style;
+			es.opacity = 1 - Math.min(Math.abs(progress/2),1);
+				es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0px,0,'+(-Math.abs(progress*150))+'px)';
+	        }
+      },
+     onSetTransition: function(swiper, speed) {
+      	for (var i = 0; i < swiper.slides.length; i++) {
+				es = swiper.slides[i].style;
+				es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration = es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = speed + 'ms';
+		}
+      }
+  });
+	</script>
+</html>

@@ -1,0 +1,70 @@
+﻿@charset "utf-8";
+.swiper-container{
+	height: 100%;
+	-webkit-perspective: 1200px;
+    -moz-perspective:  1200px;
+    -ms-perspective:  1200px;
+    perspective:  1200px;
+}
+.swiper-wrapper{
+	height: 100%;
+	margin-top:10px;
+}
+.swiper-slide{
+	width:75%;
+	margin: 0 auto;
+	background: url(../img3/card_bg.png) no-repeat;
+	background-position: center center;
+	-webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.swiper-slide-active {
+	
+}
+#pagination{
+	position:absolute;
+	bottom:100px;
+	width:100%;
+}
+@media screen and (min-height: 481px) {
+	.swiper-wrapper{
+		margin-top:20px;
+	}
+}
+@media screen and (min-height: 569px) {
+	.swiper-wrapper{
+		margin-top:40px;
+	}
+}
+/*收集卡片上的内容*/
+.page_title {
+	text-align: center;
+	padding-top: 51%;
+	font-size: 30px;
+	color: #000000 !important;
+}
+.page_img {
+	width: 2.666666rem;
+	height: 2.666666rem;
+	display: inline-block;
+	position: absolute;
+	top: 41%;
+	left: 31%;
+}
+.page_img img {
+	width: 100%;
+	height: 100%;
+}
+.total {
+	position: absolute;
+	bottom: 26%;
+	left: 38%;
+	background: #FFFFFF;
+	padding: 0.066666rem 0.5rem;
+	border-radius: 30px;
+	text-align: center;
+	color: #000000 !important;
+}
+ 	
